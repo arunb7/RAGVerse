@@ -17,7 +17,7 @@ For a detailed solution implementation guide, refer to [The Generative AI Applic
 
 ## On this page
 
--   [Reference Architecture Overview - which will be customized for Multi-tenant Awaaz application](#architecture-overview)
+-   [Reference Architecture Overview (which will be customized for Multi-tenant Awaaz application)](#architecture-overview)
 -   [Deployment](#deployment)
 -   [Source code](#source-code)
 -   [SageMaker Model Input Documentation](#sagemaker-model-input-documentation)
@@ -35,8 +35,8 @@ There are 3 unique user personas that are referred to in the solution walkthroug
         b.	Staff
         c.	Volunteer
         d.	Parent/Guardian
+    
 ![image](https://github.com/user-attachments/assets/f3820a0b-9ced-4fc2-be37-7c018f159604)
-
 
 > **_NOTE:_**
 
