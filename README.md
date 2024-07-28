@@ -1,13 +1,10 @@
-## Generative AI Application Builder on AWS
+## Awaaz backend application based on AWS reference implementation
 
+The solution provides a web-based management dashboard to deploy customizable Generative AI (Gen AI) use cases. This Deployment dashboard allows customers to deploy, experiment with, and compare different combinations of Large Language Model (LLM) use cases. Once customers have successfully configured and optimized their use case, they can take their deployment into production and integrate it within their applications.
 
-> **_NOTE:_** If you want to use the solution without any custom changes, navigate to [Solution Landing Page](https://aws.amazon.com/solutions/implementations/generative-ai-application-builder-on-aws/) and click the "Launch in the AWS Console" in the Deployment options for a 1-click deployment into your AWS Console.
+The solution is published under an Apache 2.0 license and is targeted for users who want to experiment and productionize different Gen AI use cases. The solution uses [LangChain](https://www.langchain.com/) open-source software (OSS) to configure connections to your choice of Large Language Models (LLMs) for different use cases. The first release of GAAB allows users to deploy chat use cases which allow the ability to query over users' enterprise data in a chatbot-style User Interface (UI), along with an API to support custom end-user implementations.
 
-The [Generative AI Application Builder on AWS](https://aws.amazon.com/solutions/implementations/generative-ai-application-builder-on-aws/) solution (GAAB) provides a web-based management dashboard to deploy customizable Generative AI (Gen AI) use cases. This Deployment dashboard allows customers to deploy, experiment with, and compare different combinations of Large Language Model (LLM) use cases. Once customers have successfully configured and optimized their use case, they can take their deployment into production and integrate it within their applications.
-
-The Generative AI Application Builder is published under an Apache 2.0 license and is targeted for novice to experienced users who want to experiment and productionize different Gen AI use cases. The solution uses [LangChain](https://www.langchain.com/) open-source software (OSS) to configure connections to your choice of Large Language Models (LLMs) for different use cases. The first release of GAAB allows users to deploy chat use cases which allow the ability to query over users' enterprise data in a chatbot-style User Interface (UI), along with an API to support custom end-user implementations.
-
-Some of the features of GAAB are:
+Some of the features of this application are:
 
 -   Rapid experimentation with ability to productionize at scale
 -   Extendable and modularized architecture using nested [Amazon CloudFormation](https://aws.amazon.com/cloudformation/) stacks
@@ -20,7 +17,7 @@ For a detailed solution implementation guide, refer to [The Generative AI Applic
 
 ## On this page
 
--   [Architecture Overview](#architecture-overview)
+-   [Reference Architecture Overview - which will be customized for Multi-tenant Awaaz application](#architecture-overview)
 -   [Deployment](#deployment)
 -   [Source code](#source-code)
 -   [SageMaker Model Input Documentation](#sagemaker-model-input-documentation)
@@ -33,6 +30,13 @@ There are 3 unique user personas that are referred to in the solution walkthroug
 -   The **DevOps user** is responsible for deploying the solution within the AWS account and for managing the infrastructure, updating the solution, monitoring performance, and maintaining the overall health and lifecycle of the solution.
 -   The **admin users** are responsible for managing the content contained within the deployment. These users gets access to the Deployment dashboard UI and is primarily responsible for curating the business user experience. This is our primary target customer.
 -   The **business users** represents the individuals who the use case has been deployed for. They are the consumers of the knowledge base and the customer responsible for evaluating and experimenting with the LLMs.
+    o Awaaz further defines the following business users personas
+        a.  Participant
+        b.	Staff
+        c.	Volunteer
+        d.	Parent/Guardian
+![image](https://github.com/user-attachments/assets/f3820a0b-9ced-4fc2-be37-7c018f159604)
+
 
 > **_NOTE:_**
 
@@ -69,14 +73,14 @@ Once the Deployment Dashboard is deployed, the admin user can then deploy multip
 
 ![Diagram](docs/architecture/usecase_architecture.png)
 
-1. Business users can log in to the use case UI.
+1. Business users can log in to the use case UI. This will be modified to cater different persona's access rules
 2. [Amazon CloudFront](http://aws.amazon.com/cloudfront/) delivers the web UI which is hosted in an Amazon S3 bucket.
 3. The web UI leverages a WebSocket integration built using [Amazon API Gateway](https://aws.amazon.com/api-gateway/). The API Gateway is backed by a custom Lambda Authorizer function, which returns the appropriate IAM policy based on the Amazon Cognito group the authenticating user is part of.
 4. [Amazon Cognito](https://aws.amazon.com/cognito/) authenticates users and backs both the Cloudfront web UI and API Gateway.
 5. The LangChain Orchestrator is a collection of Lambda functions and layers that provide the business logic for fulfilling requests coming from the business user.
 6. The LangChain Orchestrator leverages Parameter store and DynamoDB to get the configured LLM options and necessary session information (such as the chat history).
-7. If the deployment has enabled a knowledge base, then the LangChain Orchestrator will leverage [Amazon Kendra](http://aws.amazon.com/kendra/) to run a search query to retrieve document excerpts.
-8. Using the chat history, query, and context from Amazon Kendra, the LangChain Orchestrator creates the final prompt and sends the request to the LLM hosted on [Amazon Bedrock](https://aws.amazon.com/bedrock/) or [Amazon SageMaker](https://aws.amazon.com/sagemaker/).
+7. The Amazon Bedrock Knowledge base will be modified to use Pinecone instead of Amazon Kendra[The current deployment code leverages [Amazon Kendra](http://aws.amazon.com/kendra/) to run a search query to retrieve document excerpts.]
+8. Using the chat history, query, and context from Pinecone, the LangChain Orchestrator creates the final prompt and sends the request to the LLM hosted on [Amazon Bedrock](https://aws.amazon.com/bedrock/) or [Amazon SageMaker](https://aws.amazon.com/sagemaker/).
 9. If using a third-party LLM outside of Amazon Bedrock or Amazon SageMaker, the API key is stored in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) and must be obtained before making the API call to the third-party LLM provider.
 10. As the response comes back from the LLM, the LangChain Orchestrator Lambda streams the response back through the API Gateway WebSocket to be consumed by the client application.
 11. Using [Amazon Cloudwatch](https://aws.amazon.com/cloudwatch/), operational metrics are collected by various services to generate custom dashboards used for monitoring the deployment's health.
@@ -264,8 +268,6 @@ aws s3 cp ./regional-s3-assets/ s3://my-bucket-name-<aws_region>/generative-ai-a
 This solution collects anonymized operational metrics to help AWS improve the quality and features of the solution. For more information, including how to disable this capability, please see the [implementation guide](https://docs.aws.amazon.com/solutions/latest/enhanced-document-understanding-on-aws/reference.html).
 
 ---
-
-Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
