@@ -2,16 +2,15 @@
 
 The solution provides a web-based management dashboard to deploy customizable Generative AI (Gen AI) use cases. This Deployment dashboard allows customers to deploy, experiment with, and compare different combinations of Large Language Model (LLM) use cases. Once customers have successfully configured and optimized their use case, they can take their deployment into production and integrate it within their applications.
 
-The solution is published under an Apache 2.0 license and is targeted for users who want to experiment and productionize different Gen AI use cases. The solution uses [LangChain](https://www.langchain.com/) open-source software (OSS) to configure connections to your choice of Large Language Models (LLMs) for different use cases. The first release of GAAB allows users to deploy chat use cases which allow the ability to query over users' enterprise data in a chatbot-style User Interface (UI), along with an API to support custom end-user implementations.
+The solution is published under an Apache 2.0 license and is targeted for users who want to experiment and productionize different Gen AI use cases. The solution uses [LangChain](https://www.langchain.com/) open-source software (OSS) to configure connections to your choice of Large Language Models (LLMs) for different use cases. The first release will allow users to deploy chat use cases which allow the ability to query over subjects' data from CRM (Monday.com) and Image/Photo/Video assets (Google Drive) in a chatbot-style User Interface (UI), along with an API to support custom end-user implementations.
 
 Some of the features of this application are:
 
 -   Rapid experimentation with ability to productionize at scale
 -   Extendable and modularized architecture using nested [Amazon CloudFormation](https://aws.amazon.com/cloudformation/) stacks
--   Enterprise ready for company-specific data to tackle real-world business problems
+-   Multi-tenant subject-specific data storage and query to isolate personal/sensitive data
 -   Integration with [Amazon Bedrock](https://aws.amazon.com/bedrock/), [Amazon SageMaker](https://aws.amazon.com/sagemaker/) and select third-party LLM providers
 -   Multi-LLM comparison and experimentation with metric tracking using [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) dashboards
--   Growing list of model providers and Gen AI use cases
 
 For a detailed solution implementation guide, refer to [The Generative AI Application Builder on AWS](https://docs.aws.amazon.com/solutions/latest/generative-ai-application-builder-on-aws/overview.html)
 
