@@ -1,4 +1,4 @@
-## Awaaz backend application based on AWS reference implementation
+## Multi-Tenant Awaaz Backend Application
 
 The solution provides a web-based management dashboard to deploy customizable Generative AI (Gen AI) use cases. This Deployment dashboard allows customers to deploy, experiment with, and compare different combinations of Large Language Model (LLM) use cases. Once customers have successfully configured and optimized their use case, they can take their deployment into production and integrate it within their applications.
 
