@@ -26,8 +26,9 @@ tracer = Tracer()
 USER_AGENT = r"^(?P<category>AWSSOLUTION)\/SO(?P<id>\d+)(?P<component>[a-zA-Z]*)\/v(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$"  # NOSONAR - python:S4784
 user_agent_re = re.compile(USER_AGENT)  # NOSONAR - python:S4784
 
-DEFAULT_APP_NAME = "gen-ai-app-builder"
+DEFAULT_APP_NAME = "awaaz-chat-app"
 
+os.environ["AWS_SDK_USER_AGENT"] = '{ "user_agent_extra": "AWSSOLUTION/SO000/v0.0.0" }'
 
 @tracer.capture_method
 def custom_usr_agent_config():
