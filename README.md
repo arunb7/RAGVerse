@@ -9,7 +9,7 @@ The first release will allow users to deploy chat use cases which allow the abil
 Some of the features of this application are:
 
 -   Multi-tenant subject-specific data storage and query to isolate personal/sensitive data
--   Integration with [Amazon Bedrock](https://aws.amazon.com/bedrock/), [Amazon SageMaker](https://aws.amazon.com/sagemaker/) and select third-party LLM providers
+-   Integration with [Amazon Bedrock](https://aws.amazon.com/bedrock/), and select third-party vector stores using knowledge base
 -   Multi-LLM comparison and experimentation with metric tracking using [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) dashboards
 -   Experimentation with LLaVA (LMM) for multi-modal use case requirements - image detection capabilities
 
