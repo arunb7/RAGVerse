@@ -60,7 +60,6 @@ Once the Deployment Dashboard is deployed, the admin user can then deploy multip
 > **_NOTE:_**
 
 -   To use Amazon Bedrock, you must request access to models before they are available for use. Refer to [Model access](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html) in the Amazon Bedrock User Guide for more details.
--   You can also test the UI project locally by deploying the API endpoints and the rest of the infrastructure. To do so, follow either of the below two options and then refer [Deployment Dashboard](source/ui-deployment/README.md) and [Chat UI](source/ui-chat/README.md) project for details.
 
 ## AK : TODO : Detailed deployment procedure
  - For integrating Amazon Bedrock Knowledge base with Pinecone vector store
