@@ -69,7 +69,7 @@ class BedrockKnowledgeBase(KnowledgeBase):
             logger.error(ex, xray_trace_id=os.environ[TRACE_ID_ENV_VAR])
             raise ValueError(error_message)
 
-        logger.warning(f"Profile {self.profile} is using knowledge base id {self.knowledge_base_id}")
+        logger.warning(f">>> User {json_payload["username"]}, Profile {self.profile} maps to knowledge base {self.knowledge_base_id}")
 
         self.number_of_docs = knowledge_base_params.get(
             "NumberOfDocs",
