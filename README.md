@@ -41,7 +41,7 @@ There are 3 unique user personas that are referred to in the solution walkthroug
 
 Once the Deployment Dashboard is deployed, the admin user can then deploy multiple use case stacks. When a use case stack is deployed by the admin user, the following components are deployed in the AWS account:
 
-![Diagram](docs/architecture/usecase_architecture.png)
+![Diagram](docs/architecture/TheAwaazArchitecture.png)
 
 1. Business users can log in to the use case UI. This will be modified to cater different persona's access rules
 2. [Amazon CloudFront](http://aws.amazon.com/cloudfront/) delivers the web UI which is hosted in an Amazon S3 bucket.
