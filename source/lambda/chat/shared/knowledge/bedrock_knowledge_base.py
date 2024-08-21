@@ -64,6 +64,8 @@ class BedrockKnowledgeBase(KnowledgeBase):
             profile_kbid = json_payload["profile_kbid"].split("_")
             self.profile = profile_kbid[0]
             self.knowledge_base_id = profile_kbid[1]
+            if ((self.profile == "undefined") or (self.knowledge_base_id == "undefined")):
+                raise ValueError(f"Configuration error, pls contact Awaaz administrator")
         except Exception as ex:
             error_message = f"Error retrieving knowledge base id from the token"
             logger.error(ex, xray_trace_id=os.environ[TRACE_ID_ENV_VAR])
