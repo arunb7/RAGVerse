@@ -20,8 +20,6 @@ There are 3 unique user personas that are referred to in the solution walkthroug
 -   The **admin** are responsible for managing the content contained within the deployment.
 -   The **users** represents the individuals who the use case has been deployed for. They are the consumers of the knowledge base and the customer responsible for evaluating and experimenting with the LLMs.
     
-![image](https://github.com/user-attachments/assets/f3820a0b-9ced-4fc2-be37-7c018f159604)
-
 > **_NOTE:_**
 
 -   You have the option of deploying the solution as a VPC enabled configuration. With a VPC enabled configuration, you can choose
