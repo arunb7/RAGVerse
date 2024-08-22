@@ -2,8 +2,6 @@
 
 The solution is published under an Apache 2.0 license and is targeted for users who want to experiment and productionize different Gen AI use cases. The solution uses [LangChain](https://www.langchain.com/) open-source software (OSS) to configure connections to your choice of Large Language Models (LLMs) for different use cases. 
 
-The first release will allow users to deploy chat use cases which allow the ability to query over subjects' data from CRM (Monday.com) and Image/Photo/Video assets (Google Drive) in a chatbot-style User Interface (UI), along with an API to support custom end-user implementations.
-
 Some of the features of this application are:
 
 -   Multi-tenant subject-specific data storage and query to isolate personal/sensitive data
