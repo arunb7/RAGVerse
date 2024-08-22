@@ -1,4 +1,4 @@
-## Multi-Tenant RAG Implementation on AWS using Pinecone as Vector Store
+## Multi-Tenant Serverless RAG Implementation on AWS using Pinecone as Vector Store
 
 The solution is published under an Apache 2.0 license and is targeted for users who want to experiment and productionize different Gen AI use cases. The solution uses [LangChain](https://www.langchain.com/) open-source software (OSS) to configure connections to your choice of Large Language Models (LLMs) for different use cases. 
 
