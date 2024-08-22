@@ -9,7 +9,7 @@ Some of the features of this application are:
 -   Multi-LLM comparison and experimentation with metric tracking using [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) dashboards
 -   Experimentation with LLaVA (LMM) for multi-modal use case requirements - image detection capabilities
 
-For a detailed solution implementation guide, refer to [The Generative AI Application Builder on AWS](https://docs.aws.amazon.com/solutions/latest/generative-ai-application-builder-on-aws/overview.html)
+The solution leverages the [The Generative AI Application Builder on AWS](https://docs.aws.amazon.com/solutions/latest/generative-ai-application-builder-on-aws/overview.html)
 
 ## Architecture Overview
 
