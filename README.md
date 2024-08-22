@@ -27,7 +27,7 @@ Once the Deployment Dashboard is deployed, the admin user can then deploy multip
 4. [Amazon Cognito](https://aws.amazon.com/cognito/) authenticates users and backs both the Cloudfront web UI and API Gateway.
 5. The LangChain Orchestrator is a collection of Lambda functions and layers that provide the business logic for fulfilling requests coming from the business user.
 6. The LangChain Orchestrator leverages Parameter store and DynamoDB to get the configured LLM options and necessary session information (such as the chat history).
-7. The Amazon Bedrock Knowledge base uses Pinecone as the vector store. The namespace concept by Pinecone helps achieve multi-tenancy to run a search query to retrieve document excerpts specific to the user entitled to.
+7. The Amazon Bedrock Knowledge base uses [Pinecone](https://www.pinecone.io/) as the vector store. The namespace concept by Pinecone helps achieve multi-tenancy to run a search query to retrieve document excerpts specific to the user entitled to.
 8. Implements attribute based accesss control (ABAC) after user authentication to control access to resources (knowledge base) for authorization
 9. Using the chat history, query, and context from Pinecone, the LangChain Orchestrator creates the final prompt and sends the request to the LLM hosted on [Amazon Bedrock](https://aws.amazon.com/bedrock/) or [Amazon SageMaker](https://aws.amazon.com/sagemaker/).
 10. If using a third-party LLM outside of Amazon Bedrock or Amazon SageMaker, the API key is stored in [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
