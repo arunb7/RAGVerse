@@ -17,14 +17,8 @@ For a detailed solution implementation guide, refer to [The Generative AI Applic
 
 There are 3 unique user personas that are referred to in the solution walkthrough below:
 
--   The **DevOps user** is responsible for deploying the solution within the AWS account and for managing the infrastructure, updating the solution, monitoring performance, and maintaining the overall health and lifecycle of the solution.
--   The **admin users** are responsible for managing the content contained within the deployment. These users gets access to the Deployment dashboard UI and is primarily responsible for curating the business user experience. This is our primary target customer.
--   The **business users** represents the individuals who the use case has been deployed for. They are the consumers of the knowledge base and the customer responsible for evaluating and experimenting with the LLMs.
-    o Awaaz further defines the following business users personas
-        a.  Participant
-        b.	Staff
-        c.	Volunteer
-        d.	Parent/Guardian
+-   The **admin** are responsible for managing the content contained within the deployment.
+-   The **users** represents the individuals who the use case has been deployed for. They are the consumers of the knowledge base and the customer responsible for evaluating and experimenting with the LLMs.
     
 ![image](https://github.com/user-attachments/assets/f3820a0b-9ced-4fc2-be37-7c018f159604)
 
@@ -38,8 +32,6 @@ There are 3 unique user personas that are referred to in the solution walkthroug
 ### Use Cases
 
 Once the Deployment Dashboard is deployed, the admin user can then deploy multiple use case stacks. When a use case stack is deployed by the admin user, the following components are deployed in the AWS account:
-
-![Diagram](docs/architecture/TheAwaazArchitecture.png)
 
 1. Business users can log in to the use case UI. This will be modified to cater different persona's access rules
 2. [Amazon CloudFront](http://aws.amazon.com/cloudfront/) delivers the web UI which is hosted in an Amazon S3 bucket.
