@@ -20,13 +20,6 @@ There are 3 unique user personas that are referred to in the solution walkthroug
 -   The **admin** are responsible for managing the content contained within the deployment.
 -   The **users** represents the individuals who the use case has been deployed for. They are the consumers of the knowledge base and the customer responsible for evaluating and experimenting with the LLMs.
     
-> **_NOTE:_**
-
--   You have the option of deploying the solution as a VPC enabled configuration. With a VPC enabled configuration, you can choose
-    -   if the solution should build the VPC for this deployment.
-    -   if you would like to deploy the solution in a VPC existing in your AWS account.
--   To see the VPC related architecture diagrams, please visit the [implementation guide](https://docs.aws.amazon.com/solutions/latest/generative-ai-application-builder-on-aws/architecture-overview.html).
-
 ### Use Cases
 
 Once the Deployment Dashboard is deployed, the admin user can then deploy multiple use case stacks. When a use case stack is deployed by the admin user, the following components are deployed in the AWS account:
