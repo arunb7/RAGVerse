@@ -8,8 +8,6 @@ Some of the features of this application are:
 -   Integration with [Amazon Bedrock](https://aws.amazon.com/bedrock/), and select third-party vector stores using knowledge base
 -   Experimentation with LLaVA (LMM) for multi-modal use case requirements - image detection capabilities
 
-The solution leverages the [The Generative AI Application Builder on AWS](https://docs.aws.amazon.com/solutions/latest/generative-ai-application-builder-on-aws/overview.html)
-
 ## Architecture Overview
 
 There are 2 unique user personas that are referred to in the solution walkthrough below:
